@@ -1,0 +1,32 @@
+.style{
+	color:red;
+}
+input {
+    border: 10;
+    #outline: 0;
+    background: white;
+   # border-bottom: 2px solid black;
+    width: 300px;
+    height: 20px;
+}
+progress{
+ width: 500px;   
+ #border: 1px solid black;
+ position: center;
+ #padding: 3px;
+ background-color: green;  
+ height:25px;
+}
+
+#percent {
+ position: absolute;   
+ left: 50%;
+}
+#bar {
+ height: 20px;
+ background-color: green;
+ width: 10%;
+}   
+.mybar{
+    background-color: green;
+}

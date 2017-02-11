@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html> 
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="assests/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="assests/css/custom.css">
+        <title>CALCULATOR</title>
+</head> 
+<style>
+body{
+background-color: cyan;
+    margin-right: 150px;
+    margin-left: 80px;
+}
+</style>
+<script type="text/javascript">
+    arr = [];
+    arr1 = [];
+    arr2 = [];
+    function myfunction() { 
+        var first = document.getElementById("textbox1").value;
+        var second = document.getElementById("textbox2").value; 
+        if(first.length < 1 || second.length < 1 )
+        {
+            document.write("enter all fields");
+            var answer = 0;
+        }
+        else
+        {
+        
+        var answer = Math.random() * 100
+        }
+        
+        var textbox3 = document.getElementById('textbox3');
+        textbox3.value=Math.round(answer);
+        arr2.push(textbox3.value)
+        //if(textbox3.value > 80)
+        //{
+        //    alert ("Congrats your match rate is");
+        //}
+        //else if(textbox3.value > 50)
+        //{
+        //    alert( "Keep Trying");
+        // }
+        // else if(textbox3.value > 30)
+        // {
+        //    alert("Improve");
+        // }
+        // else if(textbox3.value == 0)
+        // {
+        //    alert("Enter all fields")
+        //  }
+        // else
+        //    {
+        //     
+        //    }
+         document.getElementById("myProgress").value = textbox3.value;
+
+    } 
+    function myfunction2(){
+
+        document.getElementById("textbox1").value = "";
+        document.getElementById("textbox2").value = "";
+        document.getElementById("textbox3").value = "";
+        document.getElementById("myProgress").value = "";
+        //firstfunction();
+     }
+     function firstfunction(){
+
+        var check = document.getElementById("textbox1").value;
+        var check2 = document.getElementById("textbox2").value;
+        if(arr.includes(check) && arr1.includes(check2))
+        {
+            for(i=0;i<arr.length;i++)
+            {
+                if(arr[i] === check && arr1[i] === check2)
+                {
+                    res = document.getElementById('textbox3')
+                    res.value = arr2[i]
+                    document.getElementById("myProgress").value = textbox3.value;
+                    return
+                }
+            }
+       }
+       else 
+       {
+        arr.push(document.getElementById("textbox1").value);
+        arr1.push(document.getElementById("textbox2").value);
+        myfunction()
+        return
+       }
+     }
+</script>
+ <body> 
+ <a href = "assests\image\text.html">
+ 
+ <font><b><i>click Here to see how to use<i><b></font></a>
+ <br>
+ <font size="15" color="black"><b><i>shiva kumar kottala game<i><b></font>
+    <fieldset>
+      <div class = "col-md-8">
+        <label for ="textbox1"> your name  </label>
+        <input type="text" name="textbox1" id="textbox1"/> 
+      </div>
+        <br><br>
+      <div class = "col-md-8">
+        <label for ="textbox2">Ua friend name </label>
+        <input type="text" name="textbox2" id="textbox2" /> 
+        <br><br>
+      </div>
+      <div class = "col-md-8">
+        <button class="btn btn-warning" onclick="firstfunction()" > Check Result </button><br><br>
+      </div>
+      <div class= "col-md-8">
+        <button class = "btn btn-danger" onclick="myfunction2()">Try another</button>
+      </div>
+
+
+    </fieldset>
+<br/>
+Your match rate is:--
+<br><br>
+<br>
+<label for="textbox3"> Match Result</label>
+<input type="text" name="textbox3" id="textbox3" readonly="true"/>
+<br>
+<br><br><br>
+
+<strong>STATUS</strong>
+        <progress id="myProgress" value="0" max="100">
+            your match rate
+        </progress>
+<br><br><br>
+<div>
+   <font color= "blue" size = ""><i> Page was intended to trail the Git hub <i></font>
+   <br><br>
+</div>
+<p> Thank you for spending time </p>
+<p> please help for better output as this is created jus for fun</p>
+<p> yours Rock star</p>
+<img class="img img-circle" src = "assests\image\DSC_1712.JPG" width="150" height="150"> </img>
+</body>
+
+ </html>
