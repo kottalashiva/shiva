@@ -1,0 +1,144 @@
+<html>
+<head> 
+<style>
+body{
+background-color: cyan;
+    margin-right: 150px;
+    margin-left: 80px;
+}
+#play{
+background-color:orange;
+font-family:Serif; 
+width:150px;
+height:50px;
+}
+#pause{
+background-color:red;
+font-size:20;
+font-family:Times New Roman; 
+width:150px;
+height:50px;
+}
+#restart{
+background-color:green;
+font-size:20;
+font-family:Times New Roman; 
+width:150px;
+height:50px;
+}
+font{
+    font-size:65px;
+    font-family:Serif;
+    color:red;
+}
+p{
+    font-size:35px;
+    font-family:Serif;
+    color:orange;
+}
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+}
+#footer {
+   position:absolute;
+   bottom:0;
+   width:100%;
+   height:60px;   /* Height of the footer */
+   background:#6cf;
+}
+span {
+  display: inline-block;
+  background-color: green;
+  width: 20px;
+  height: 20px;
+  animation: wave 2s linear infinite;
+}
+.a1 {
+  animation-delay: 0s;
+}
+.a2 {
+  animation-delay: .2s;
+}
+.a3 {
+  animation-delay: .4s;
+}
+.a4 {
+  animation-delay: .6s;
+}
+.a5 {
+  animation-delay: .8s;
+}
+@keyframes wave {
+  0%, 50%{
+    transform: scaleY(7);
+  }
+  25% {
+    transform: scaleY(5);
+    background-color: palevioletred;
+  }
+}
+</style>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<title> Song of  the Day</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript">     
+     $(document).ready(function() { 
+         var audioElement = document.createElement('audio');
+            audioElement.setAttribute('src', 'assests\\image\\12Mar2017115856am.wav')
+            audioElement.addEventListener('ended', function() {
+        this.play();
+    }, false);
+        $('#play').click(function() {
+            audioElement.play();
+            $("#status").append("<marquee><p style='color:blue'> playing the song......!!</p></marquee>");
+            $('font').hide();
+        });
+        $('#pause').click(function(){
+            audioElement.pause();
+            $("#status2").append("<marquee><p style='color:green'> paused the song......click play!!</p></marquee>");
+            
+            
+            
+            });
+        $('#restart').click(function(){
+            audioElement.currentTime=0;
+            $("#status1").append("<marquee><p> Restarted the song......!!</p></marquee>");
+            audioElement.play();
+            });
+        });
+ </script>
+</head>
+
+<body style="background-color:cyan; margin-right:120px">
+<marquee><font> Introducing the new singer..
+click play button to listen to song</font></marquee>
+<div id="status">
+<button type="button" id="play" align="right">play to listen audio</button>
+</div>
+<div id="status2" align="center">
+<button type="button" id="pause" align="left">pause</button>
+</div>
+<div id="status1" align="right">
+<button type="button" id= "restart"> restart</button>
+</div>
+<div id="waves" align="center">
+  <span class="a1"></span>
+  <span class="a2"></span>
+  <span class="a3"></span>
+  <span class="a4"></span>
+  <span class="a5"></span>
+</div>
+<div id="footer">
+<em style="font-size:30px;">Thanks ksk</em>
+<div position="absolute" align="left">
+<img src="assests\image\DSC_1712.JPG" width="50" height="50" alt="image"> </img>
+</div>
+</div>
+</body>
+</html>
